@@ -1,0 +1,30 @@
+\chapter{Grundlagen des Reinforcement Learning}\label{chap:grundlagen_rl}
+Autonome Systeme bieten die Möglichkeit zur selbständigen Lösung komplexer oder für Menschen gefährlicher Probleme in potenziell unbekannten Umgebungen. 
+Die technische Umsetzung dieser Systeme durch klassische Programmierparadigmen ist in vielerlei Hinsicht problematisch.
+So ist der Zustandsraum in realen Anwendungen extrem groß. 
+Insbesondere in fremden Umgebungen mangelt es klassischen Programmen an Allgemeingültigkeit. 
+Das System sollte das Problem auch in unbekannten Umgebungen lösen können, ohne dass eine Anpassung der Logik notwendig ist.
+Als zusätzliche Stufe der Komplexität ergibt sich zudem die Interaktion mit Menschen oder anderen autonomen Systemen. 
+\ab
+Menschen lernen von früh auf, indem sie den Einfluss ihrer Aktionen auf die Umgebung \cite[S. 1]{sutton2018} beobachten und daraus Schlüsse ziehen.
+Jede Reaktion der Umwelt auf das Verhalten wird verarbeitet und beeinflusst die spätere Wahl der Aktionen.
+Der Mensch entwickelt sich dadurch im Laufe der Zeit \cite[S. 634]{castano}.
+Formal sind viele Reinforcement-Learning-Verfahren angelehnt an das psychologische Phänomen der operanten Konditionierung \cite[S. 34]{lefrancois1986}. 
+Laut Skinner wird operante Konditionierung folgendermaßen beschrieben: 
+\enquote{Wenn eine Reaktion [...] von einer Verstärkung gefolgt wird, so resultiert daraus eine Erhöhung der Wahrscheinlichkeit, dass diese Reaktion später unter ähnlichen Umständen wieder auftritt.}\cite[34]{lefrancois1986}.
+Analog dazu sinkt die Wahrscheinlichkeit, wenn die Aktion bestraft wird.
+Das Ausprobieren von Aktionen erfolgt nach dem Versuchs- und Irrtums-Prinzip \cite[S. 2f]{sutton2018}.
+Die Schwierigkeit dabei ist, dass die Aktionen nicht nur Einfluss auf den direkten Folgezustand, sondern auch nachhaltig auf spätere Zustände nehmen.
+So kann die vermeintlich optimale Aktion zwar kurzfristig die Belohnung maximieren, langfristig aber nicht optimal sein.
+Der Agent muss dabei abwägen, ob bestehendes Wissen genutzt wird (engl. exploitation) oder neues Wissen hinzugewonnen werden soll (engl. exploration).
+\ab
+Anders als bei anderen maschinellen Lernverfahren, wie beim überwachten Lernen, ist das Ziel des Reinforcement Learning nicht, Wissen aus vorher manuell bewerteten Informationen, sondern aus Aktionen und dessen Auswirkung zu generalisieren.
+Überwachte Lernverfahren sind in vielen Domänen sinnvoll und können gute Lösungen hervorbringen.
+Durch die vom Menschen benötigten Information über die Klassenzugehörigkeit der Daten ist dieser Ansatz jedoch nur beschränkt für komplexe Umgebungen anwendbar.
+\ab
+Reinforcement Learning ist nicht ein einzelner Algorithmus, sondern ein Paradigma des maschinellen Lernens, welches aus einer Sammlung von Algorithmen und Vorangehensweisen zusammengesetzt ist.
+Deshalb wird im Folgenden das Konzept des Markov-Entscheidungsprozesses als Grundlage des Reinforcement Learning beschrieben. 
+Zusätzlich werden Eigenschaften von Reinforcement-Learning-Verfahren aufgezeigt, um daraus in der späteren Konzeption \autoref{sec:massnahmen} technische Maßnahmen ableiten zu können.
+
+\input{content/03_01_markov.tex}
+\input{content/03_02_eigenschaften_rl}

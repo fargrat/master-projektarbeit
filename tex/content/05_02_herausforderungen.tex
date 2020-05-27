@@ -1,0 +1,50 @@
+\section{Herausforderungen}\label{sec:Herausforderungen}
+Im Folgenden werden Herausforderungen betrachtet, die bei der Konzeption technischer Maßnahmen zur Erstellung eines Vorgehensplans für die Entwicklung ethischen Reinforcement Learnings auftreten können.
+
+\subsection{Subjektivität moralischen Handelns}
+Agenten können die Werte der Entwickler widerspiegeln, indem unterschiedliche Arten der Beeinflussung (engl. bias) \cite{sengupta2018} bewusst oder unbewusst in die Datenerhebung und die spätere Entwicklung einfließen.
+Beispiele dafür sind z.B. Stereotypisierung oder eine einseitige Auswertung und Anpassung bezüglich der Klassenverteilung.
+Dadurch, dass die Entwicklung von Reinforcement-Learning-Anwendungen oft in größeren, heterogenen Teams geschieht, sollten Maßnahmen ergriffen werden, damit die Beteiligten ein, mit den geforderten Werten an die Anwendung, kompatibles Wertesystem besitzen.
+Ebenso sollten Maßnahmen ergriffen werden, um Verzerrungen zu identifizieren und diese je nach Grad der Abweichung als Fehler zu betrachten und Möglichkeiten der Beseitigung dieser Verzerrung in Betracht gezogen werden.
+
+\subsection{Problem der Formalisierung}
+Moralisches Handeln ist abhängig von der jeweiligen Situation.
+Einfache Entscheidungen werden meist intuitiv getroffen und können dementsprechend nur schwer formalisiert werden.
+Im Gegensatz dazu stehen Situationen, in denen durch Komplexität und Uneindeutigkeit moralischer Prinzipien Dilemma \cite[S. 300]{moll2003} entstehen.
+In Diesem Fall ist die Entscheidungsfindung hochgradig dynamisch und abhängig von einer analytischen Denkweise, in der versucht wird, mögliche Folgen abzuwägen.
+Es stellt sich neben der Problematik der Formalisierbarkeit der intuitiv-emotionalen Entscheidungen die Problematik bezüglich der technischen Abbildung des komplexen Prozesses im Falle eines moralischen Dilemmas.
+Neben der Formalisierung der Entscheidungsprozesse müssen diese Werte und Normen nach denen moralisches Handeln erfolgt formalisiert werden, um in Agenten technisch abgebildet werden zu können.
+
+\subsection{Mangelnde Zertifizierung}
+Sicherheitskritische Anwendungen können Vertrauen gewinnen, indem die Korrektheit der Implementierung und Prozesse durch vertrauenswürdige Institutionen geprüft und anschließend bestätigt wird.
+Projektebezogene Prozesse und Grundlagenalgorithmen können durch gängige Institutionen und Normen zertifiziert werden.
+Durch die Aktualität und insbesondere die Komplexität von Reinforcement Learning konnte im Rahmen der Recherche jedoch keine explizite Möglichkeit zur Zertifizierung speziell von Reinforcement Learning Systemen im Gesamten identifiziert werden.
+Zwar gibt es Ansätze z.B. vom Fraunhofer-Institut für Intelligente Analyse- und Informationssysteme \cite{cremers} für die Zertifizierung von KI-Anwendungen, allerdings wird zum Zeitpunkt der Arbeit lediglich ein Prüfkatalog als Grundlage der späteren Zertifizierung entwickelt.
+Umso wichtiger ist es dann, Vertrauen aufzubauen und Korrektheit transparent und nachvollziehbar selbständig nachzuweisen.
+
+\subsection{Innovation, Fortschritt und Adaption}
+Insbesondere auf internationaler Ebene versuchen alle Beteiligten einen Vorsprung im Bereich künstlicher Intelligenz zu erlangen.
+Treiber dieses internationalen Wettlaufs sind dabei Innovation und Fortschritt.
+Dem gegenüber steht das Potenzial des Reinforcement Learning Wohl und Würde des Menschen zu gefährden.
+Die Definition expliziter ethischer Werte und die daraus resultierenden Maßnahmen sollen die Wahrung fördern und die Relevanz der Einhaltung eben dieser aufzeigen.
+Es gilt, blinden Fortschritt zu verhindern und stattdessen frühzeitig ethische Werte zu diskutieren, sowie Maßnahmen zur Zusicherung zu identifizieren.
+Optimalerweise unterstützt die Betrachtung ethischer Werte die Adaption in der Gesellschaft, Wirtschaft und Politik, indem Vertrauen aufgebaut wird.
+Um dies zu unterstützen bedarf es neben dem Einfordern der Gesellschaft der Berücksichtigung ethischer Bedenken und gesetzlichen Regelungen seitens der Politik, technische und organisatorische Maßnahmen möglichst kompatibel mit bestehenden Prozessen und Technologien zu definieren und aufzuzeigen, inwiefern ethisches Verhalten wirtschaftlich sinnvoll sein kann.
+\ab 
+Neben dem Bestreben nach Fortschritt stehen allerdings auch Bedenken der Gesellschaft.
+Eine breite Adaption innerhalb der Gesellschaft ist Grundlage der Beteiligung von Unternehmen am Fortschritt zwecks wirtschaftlichen Interesses.
+Die Adaption wird z.B. durch die Diffusionstheorie \cite[S. 513 ff.]{karnowski2013} beschrieben.
+Auf persönlicher Ebene entsteht die Entscheidung zur Adaption als Folge gewisser Grundvorrausetzungen, dem Wissensstand und der persönlichen Abwägung bezüglich der Nutzung.
+Zu den Grundvoraussetzungen gehören Erfahrungen mit ähnlichen Technologien, die Existenz von Probleme, die die Technologie löst, das Maß an Innovation und der persönliche Kontext.
+Durch Hinzunahme des persönlichen Verständnisses der Technologie wird abgewägt, wie groß der Nutzen im Verhältnis zur Komplexität der Adaption und wie kompatibel es mit der persönlichen Situation ist.
+Um eine Adaption zu fördern müssen diverse Herausforderungen betrachtet werden.
+Dazu gehört die digitale Kluft \cite{rogers2016} als Wissenlücke bezüglich digitaler Technologien zwischen gesellschaftlichen Gruppen.
+Ebenso müssen Fähigkeiten, Limitierungen der Technologie transparent gemacht und relevante Nutzungskontexte für die Gesellschaft identifiziert werden.
+Zusätzlich muss ein Mindestkenntnisstand etabliert, sowie die Komplexität der Anwendungen auf ein Maß reduziert werden, um die Technologie attraktiv zu gestalten.
+\ab 
+Grundlage der persönlichen Entscheidung zur Adaption ist die Kenntnis über den tatsächlichen Einsatz der Technologie. 
+Zum Zeitpunkt der Arbeit besteht allerdings keine Kennzeichnungspflicht bezüglich des Einsatzes von KI-Technologien.
+Reinforcement Learning ist dabei oft nicht eine eigenständige Anwendung, sondern Teilkomponente in bestehenden Systemen.
+Die Entscheidung bezüglich der Adaption ist dabei nur dann relevant, wenn der Nutzer auch einen tatsächlichen Einfluss auf die Nutzung haben kann.
+So haben beispielsweise Menschen in Kriegsgebieten keinen Einfluss auf den Einsatz autonomer Waffensysteme.
+Umso wichtiger ist dann die Schaffung gesetzlicher Rahmenbedingungen, bezüglich des Einsatzes von Reinforcement Learning und der Beachtung gewisser ethischer Werte und der Umsetzung geeigneter Maßnahmen zur Zusicherung dieser Werte.

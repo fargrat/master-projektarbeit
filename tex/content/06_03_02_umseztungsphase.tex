@@ -1,0 +1,97 @@
+\subsection{Technische Konzeptions- und Umsetzungsphase}\label{sub:umsetzungsphase}
+Im Folgenden werden Maßnahmen zum Softwaredesign basierend auf den in \autoref{sub:vorbereitungsphase} erhobenen Anforderungen vorgestellt.
+Zusätzlich werden Technologien zur praktischen Umsetzung der in \autoref{sec:def_ethischer_werte} definierten ethischen Werte im Kontext einer Reinforcement-Learning-Anwendung betrachtet.
+Dafür werden mögliche technische Probleme betrachtet, die mit der Umsetzung der ethischen Werte kollidieren und Maßnahmen aufgezeigt, die diesen Problemen entgegenwirken.
+
+\subsubsection{Selektion der Technologie}
+Die Wahl des Reinforcement-Learning-Verfahrens sollte durch die Beachtung ethischer Werte nicht auf wenige Einzelne beschränkt werden, sondern bestehende so angepasst und genutzt werden, dass sie den Anforderungen entsprechen können.
+Um Vertrauen zu gewinnen ist die Nutzung standardisierter Implementierungen von Grundlagenalgorithmen sinnvoll.
+Zum aktuellen Zeitpunkt konnten im Rahmen der Recherche keine Normen identifiziert werden, nach denen Reinforcement-Learning-Systeme zertifiziert werden können.
+Als Alternative zur Zertifizierung des Gesamtsystems ist es sinnvoll, Standardimplementationen einzelner Algorithmen zu benutzen.
+So bietet beispielsweise das Forschungsinstitut OpenAI \cite{openai} eine Sammlung an Standardimplementierungen \cite{dhariwal2017}.
+Diese sind zwar nicht offiziell zertifiziert, werden aber durch OpenAI und durch die Open-Source-Gemeinschaft gepflegt und getestet.
+Auch wenn die Nutzung dieser Algorithmen Potenzial hat, eine bessere Vergleichbarkeit zu gewährleisten und die Korrektheit zu erhöhen, sollte ein intensiver Fokus auf die Testphase gelegt werden und so ein eigener Nachweis der Korrektheit erbracht werden.
+\ab
+Es existiert eine Vielzahl an Reinforcement-Learning-Verfahren mit unterschiedlichen Eigenschaften, die in \autoref{sec:eigenschaften_rl} beschrieben wurden.
+Allgemeingültige Empfehlungen bezüglich eines einzelnen Verfahren sind nicht sinnvoll, da die Technologie sich stetig verändert und die Wahl des Verfahrens stark vom Anwendungskontext abhängig ist. 
+Die Entscheidung sollte auf Grundlage der Abwägung der Stärken und Schwächen der einzelnen Verfahren und Eigenschaften getroffen werden.
+Bei der Wahl des Verfahren ist insbesondere die Komplexität der Umwelt zu beachten.
+Agiert der Agent ausschließlich in einer begrenzten Domäne, ist die Wahl eines model-basierten Verfahrens sinnvoll.
+So kann eine Repräsentation der Umwelt erzeugt werden, womit die Folgen von Aktionen im Vorhinein approximiert werden können.
+Neben der Unterscheidung zwischen model-basierten und model-freien Verfahren ist zu entscheiden, ob gemäß On-Policy oder Off-Policy gelernt wird.
+Off-Policy-Learning tendiert eher zur Entdeckung (engl. exploration) \cite[S. 24]{herrmann} neuer Aktionsfolgen, wohingegen On-Policy-Learning eher in Richtung der bestehenden Verhaltensstrategie tendiert.
+Insbesondere bei sicherheitskritischen Anwendungen ist ein starker Fokus auf Entdeckung, zumindest in einer realen Umgebung, nicht wünschenswert.
+
+\subsubsection{Datenverarbeitung}
+Reinforcement Learning ist abhängig von den gesammelten Daten der Umwelt.
+Sind die Daten inkorrekt oder manipuliert, kann die Korrektheit und damit die Gesamtgüte des Systems kompromittiert werden.
+Auch wenn Reinforcement Learning ein Online-Learning-Verfahren ist, werden Daten möglicherweise transformiert, indem beispielsweise der Zustandsraum zeitlich diskretisiert wird.
+Ebenso kann von der Sammlung dieser Daten, insbesondere der Entscheidungen des Agenten profitiert werden.
+Um die Korrektheit der Daten sicherzustellen empfiehlt sich die Sicherstellung der Datenherkunft (engl. data provenance) \cite[S. 3]{olufowobi2017}.
+Data Provenance beschreibt die Dokumentation der Geschichte des Ursprungs und der Transformation der Daten.
+Durch ein entsprechendes Datenmodell wird ermöglicht nachzuvollziehen, wie die Daten entstanden sind und wie sie transformiert werden.
+Zusätzlich kann durch Data Provenance Poisoning als Angriff abgemildert werden, indem Veränderungen der Daten nachvollzogen werden können.
+Poisoning beschreibt einen Angriff, bei dem eine gezielte Veränderung der Umgebung vorgenommen wird, wodurch das Verhalten beeinflusst wird \cite[S. 103]{baracaldo2017}.
+Durch diese Maßnahmen kann konstant die Korrektheit und Neutralität der Daten-Pipeline sichergestellt werden, indem nachvollzogen werden kann, inwiefern die Transformation der Ausgangsdaten den Anforderungen entspricht.
+\ab 
+Neben der Transformation der Daten sollte auch die Entstehung der Daten betrachtet werden.
+Insbesondere in praktischen Anwendungen dienen Sensoren oft als Datenquelle und können Abnutzungserscheinungen erleiden, indem sie verändert oder beschädigt werden \cite[S. 113]{kramer2009}.
+Wünschenswert ist deshalb eine regelmäßige automatische und manuelle Überprüfung der Sensorik, wobei zu beachten ist, dass diese Veränderung ggfs. nicht auffällig ist.
+In diesem Fall sollte ein Fail-Safe-Mode vorhanden sein, da ein reguläres Abschalten des Systems ebenfalls eine Gefährdung darstellen kann.
+
+\subsubsection{Zusätzliche Mechanismen zur Erklärbarkeit}
+Je nach Verfahren weißt Reinforcement Learning ein unterschiedliches Maß an Erklärbarkeit auf.
+Wird beispielsweise ein tabulares Verfahren benutzt, so können die eigentlichen Entscheidungen transparent nachvollzogen werfen, dadurch dass die Daten und die Entscheidungsstrategie zu jedem Zeitpunkt bekannt sind.
+Bei Verfahren, die künstliche neuronale Netze \cite[S. 187]{sutton2018} nutzen gibt es das Problem der Erklärbarkeit, was bei vielen überwachten Lernverfahren üblich ist, in dem der eigentliche Entscheidungsprozess als Blackbox anzusehen ist.
+Durch Algorithmen wie LIME (local interpretable model-agnostic explanations) \cite{ribeiro2016} kann Erklärbarkeit auch bei künstlichen neuronalen Netzen gewährleistet werden.
+LIME erstellt ein zusätzliches interpretierbares Model, welches inhaltlich gleich zum eigentlichen Model ist.
+Interpretierbare Verfahren, wie Entscheidungsbäume, bieten die Möglichkeit durch nicht abstrakte Attribute eine Visualisierung anzubieten, die es dem Betrachter ermöglicht die Entscheidungsgrundlage nachzuvollziehen.
+\ab 
+Ein anderer Ansatz für die Zusicherung von Erklärbarkeit von Reinforcement-Learning-Verfahren wird in \cite{sequeira2019} beschrieben.
+Ziel des Verfahren ist die Identifikation von \enquote{interestingness elements} \cite[S. 2]{sequeira2019}, also von Elementen, die die Entscheidung durch einen hohen Informationsgehalt beeinflussen.
+Um das zu erreichen werden zusätzlich diverse Informationen gesammelt bzw. generiert.
+Die Informationen bestehen aus:
+\begin{itemize}
+    \item Häufigkeit einzelner Beobachtungen $z$ und wie oft daraufhin eine Aktion $a$ ausgeführt wurde.
+    \item Häufigkeit und Wahrscheinlichkeit, wie oft eine Beobachtung $z'$ als Folge eines vorhergegangen Entscheidungstupels $(z, a)$ erfolgt ist.
+    \item Geschätzter Nutzen des Entscheidungstupels $(z, a)$.
+    \item Geschätzter Nutzen $z$ zu beobachten.
+\end{itemize}
+Die Informationen werden analysiert, um Informationen über relevante Elemente zu erhalten und zu bewerten inwiefern diese zur Entscheidungsfindung beitragen.
+
+\subsubsection{Safe Exploration}
+Safe Exploration beschreibt eine Sammlung von Maßnahmen, um einen Agenten auf sichere Art und Weise eine Umgebung erkunden zu lassen.
+Eine sicherer Erkundungsprozess ist dann wichtig, wenn der Agent in unbekannten Umgebungen agiert. 
+Auch dann sollte der Lernprozess keine Menschen in der Umgebung gefährden.
+In \cite[S. 14 ff.]{amodei2016} werden diverse Möglichkeiten vorgeschlagen, um Safe Exploration umzusetzen.
+
+\begin{description}
+    \item \qa{Veränderte Optimierung der Verhaltensstrategie}
+    Die Verhaltensstrategie soll nicht anhand der Maximierung der Gesamtbelohnung optimiert wird, sondern auch anhand des Verhaltens in selten eintretenden Fällen.
+    \item \qa{Simulation der Umwelt}
+    Projekte, wie OpenAI Gym \cite{brockman2016} bieten eine standardisierte Schnittstelle zur Erstellung simulierter Umgebungen, wobei viele bekannte Szenarien, wie die Bewegung gewisser Roboter bereits implementiert sind.
+    Viele Reinforcement-Learning-Anwendungen folgen einem iterativen Prozess des \enquote{[...] continual cycle of learning and deployment [...]}\cite[S. 15]{amodei2016}.
+    Neben der Optimierung des Verfahrens kann es sinnvoll sein auch die Umgebung nach jedem dieser Schritte abhängig von den Resultaten und den daraus resultierenden Probleme zu optimieren.
+    Dadurch können Fehler, wie eine zu starke Anpassung oder Reward Hacking, also das Erlernen nicht generalisierbaren Verhaltens für ein spezielles Problem verhindert werden.
+    \item \qa{Begrenzung der Umgebung}
+    Findet das System zwangszweise Anwendung in einer realen Umwelt, kann es sinnvoll sein diese zu begrenzen.
+    Dabei kann die Definition von sicheren Zuständen, insbesondere eines sicheren Startzustandes helfen, Risiken zu minimieren.
+    Zusätzlich kann für jede Aktion geprüft werden, ob das Ausführen zur Folge hätte, dass der sichere Zustand verlassen wird.
+    \item \qa{Überwachung durch Menschen}
+    Die Überwachung des Agenten kann auf unterschiedlichen Arten erfolgen.
+    So kann beispielsweise gefordert werden, dass jede Aktion durch einen Menschen freigegeben werden muss, was allerdings bei Echtzeitanwendungen einen starken Einfluss auf die Performanz hat. 
+    Eine abgeschwächte Variante dieses Verfahrens ist die Begrenzung des autonomen Handelns auf klar definierte sichere Zustände, wobei beim Verlassen dieser Zustände eine Zusicherung eines Menschen erfordert wird.
+    Beide Aktionen sind ggfs. sehr langsam, da je nach Modellierung Aktionen sehr schnell erfolgen können.
+    Trotzdem sichert die menschliche Überwachung die Forderung von \cite{hellbardt1996} zu, dass Entscheidungen über die Ziele der Agenten beim Anwender belassen sein sollten.
+    Zusätzlich bietet der menschliche Einfluss ein erhöhtes Maß an Sicherheit gegenüber unerwünschter Handlungen, sowie eine klarere Definition der Verantwortung.
+\end{description}
+
+\subsubsection{Sonstige Maßnahmen}
+Folgende Maßnahmen haben eine zu hohe inhaltliche Distanz zu den anderen Maßnahmen oder einen zu geringen Einfluss auf die Umsetzung der ethischen Werte und sollen deshalb der Vollständigkeit halber lediglich aufgezählt werden.
+\begin{itemize}
+    \item Klare Kennzeichnung der Absicht des Agenten durch Statusanzeigen o.Ä.
+    \item Apprenticeship Learning \cite{abbeel2004} als Möglichkeit unter menschlicher Überwachung zu lernen.
+    \item Reward Shaping bzw. Reward Engineering \cite{karampatziakis2019} kann helfen das System zu optimieren. Überlicherweise wird als Optimierungsmetrik der Verhaltensstrategie ein direktes Feedback der Umgebung bzw. des Nutzers verwendet. Die Identifikation von indirektem Feedback sollte analysiert werden und möglicherweise zusätzlich zum direkten Feedback genutzt werden.
+    \item Verzerrungen durch Daten und Entwickler beachten \cite{thomson2001a}.
+    Die Daten sind stark von der Modellierung der Umwelt und der Einschätzung und Wissensstand der Entwickler abhängig und damit auch anfällig für die Verzerrung des Verhaltens durch die persönlichen Werte der Entwickler.
+\end{itemize}

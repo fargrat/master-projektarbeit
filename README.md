@@ -1,2 +1,10 @@
-# master-projektarbeit
-Betrachtung technischer Maßnahmen zur Umsetzung ethischer Sicherheitsaspekte bei der Erstellung und Anwendung von Reinforcement-Learning-Modellen
+# Betrachtung technischer Maßnahmen zur Umsetzung ethischer Sicherheitsaspekte bei der Erstellung und Anwendung von Reinforcement-Learning-Modellen
+*von Niels Schlunder*
+
+### Kurzfassung
+
+Reinforcement Learning wird als Kerntechnologie in autonomen Anwendungen der Medizin, Mobilität oder unbemannten Waffensystemen eingesetzt. Daraus ergibt sich neben dem Potenzial gesellschaftlichen und wissenschaftlichen Fortschrittes auch das Risiko zur Gefährdung von Wohlergehen und Würde des Einzelnen. Basierend auf Prinzipien der angewandten Ethik und der Betrachtung regionaler Leitlinien für ethische KI-Anwendungen werden im Rahmen dieser Arbeit ethische Werte als Grundlage für moralisches Handeln von Reinforcement Learning Agenten definiert. Um die Umsetzung dieser Werte zu unterstützen wird ein Vorgehensplan aufgezeigt, der parallel zu gängigen Vorgehensmodellen in den Entwicklungsprozess eingeführt werden kann. Innerhalb des Vorgehensplan werden technische und organisatorische Maßnahmen eingeführt, die über den tatsächlichen Implementierungsprozess hin- aus die Zusicherung moralischen Handelns von Reinforcement Learning Agenten unter Miteinbeziehung aller Projektbeteiligten und möglichst verfahrensunabhängig unterstützt.
+
+### Abstract
+
+Reinforcement Learning as a core technology for autonomous applications can be used in domains such as healthcare, transport or unmanned weapon systems. Apart from the potential for social and economic growth, the technology could possbily endanger human dignity and well-being. Based on principles of applied ethics and regional guidelines for ethical AI applications, ethical values as a foundation for moral behaviour of Reinforcement Learning agents are defined. To support the implementation of these values, process guidelines are proposed, which can be introduced simultaneous to most existing process models. The guidelines contain technical and organisational measures as a mostly methodological independent approach, which ensures moral behaviour of Reinforcement Learning agents beyond the implementional process including all project members.

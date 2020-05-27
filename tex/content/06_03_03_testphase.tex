@@ -1,0 +1,38 @@
+\subsection{Testphase}\label{sub:testphase}
+Ziel der Testphase ist die Überprüfung der Korrektheit der vorhergangenen Implementierung gemäß Funktionalität, Robustheit und der Erfüllung der Anforderungen.
+Um tatsächlich Vertrauen in die Korrektheit des Systems zu gewinnen müssen Evaluierungsprozess und Dokumentation transparent und nachvollziehbar sein.
+Dafür werden im Folgenden zum einen die Prozesse der Verifikation, sowie der Evaluation von Reinforcement-Learning-Systemen betrachtet.
+
+\subsubsection{Verifikation der Korrektheit}
+Gängige Verifikationsverfahren für Softwaresysteme, wie Modelprüfung (engl. model-checking) sind beim Reinforcement Learning nicht ohne Anpassung nutzbar \cite[S. 12 ff.]{vanwesel2017}, da das System durch den stetigen Lernprozess verändert wird.
+Model-Checking kann z.B. dann benutzt werden, wenn nur ein einzelner Zeitpunkt des Systems betrachtet wird.
+Grundlage der Verifikation ist die klare Erhebung der Anforderungen und Limitierungen in \autoref{sub:vorbereitungsphase}, welche als Spezifikation für die Verifikation benutzt werden.
+Zu unterscheiden ist zwischen Offline-Verifikation, welches Verifikationsverfahren beschreibt, die zu festen Zeitpunkten genutzt werden können und Online-Verifikation, welches Verifikationsverfahren beschreibt, die in dynamischen Systemen benutzt werden können.
+\ab 
+Obwohl Reinforcement Learning ein Online-Lernverfahren beschreibt, können einige Spezifikation auch offline verifiziert werden.
+So können bei model-basierten Verfahren Markov-Entscheidungsprozesse über Werkzeuge, wie PRISM (Probalistic Symbolic Model Checker) \cite{prism} automatisch verifiziert werden.
+Bei model-freien Verfahren muss das Model erst gelernt werden und kann dann, analog zu den model-basierten Verfahren getestet werden.
+Neben des Markov-Entscheidungsprozess können bei Reinforcement-Learning-Anwendungen die eingesetzten Grundlagenalgorithmen mit regulären Offline-Verfahren getestet werden.
+Zusätzlich lassen sich Aussagekraft und Güte der Trainingsdaten in Form von Eigenschaften, wie der Verteilung oder Unabhängigkeit durch statistische Verfahren testen.
+\ab
+Durch die sich ständig verändernde Natur eines Online-Lernverfahrens ist Online-Verifizierung bzw. \enquote{runtime verification} \cite[S. 16]{vanwesel2017} rechen- und speicherintensiv.
+Das grundlegende Vorgehen bei Online Verification basiert auf der Annahme, dass, wenn die Spezifikation vor Beginn des Lernens und bei jeder Änderung erfüllt ist, die Spezifikation als Ganze erfüllt ist.
+Geprüft werden dann die Zustands-Aktionspaare hinsichtlich ihrer Übereinstimmung mit der Spezifikation.
+In der Spezifikation müssen neben den Anforderungen auch die Limitierungen abgebildet sein und durch das Verifikationsverfahren geprüft und zugesichert werden.
+\ab 
+Auch wenn das Gesamtsystem als solches nicht mit nur einem Verfahren verifiziert werden kann, so kann durch die Kombination mehrerer Verfahren und die Verifikation einzelner Teilkomponenten eine Verbesserung von Korrektheit und Robustheit und damit der Zuverlässigkeit erzielt werden.
+Die Definition der Spezifikation muss allgemein genug definiert sein, sodass möglichst viele Sachverhalte abgedeckt sind, aber auch so speziell, dass die Eigenheiten des Systems und des Anwendungskontexts abgebildet werden.
+
+\subsubsection{Evaluierung der Ergebnisse}
+Ziel der Evaluierung ist die Bewertung der Güte des Modells anhand nachvollziehbarer Metriken.
+Die Metriken erbringen den Nachweis über die Zuverlässigkeit und ermöglichen einen sachlichen Vergleich mit anderen Systemen.
+Aussagekräftige Metriken erlauben zudem die Schaffung realistischer Erwartungen \cite[S. 13]{gottesman2018}.
+Eine Einordnung der Güte eines Systems sollte in Relation zu anderen Systemen und insbesondere zur menschlichen Leistung im Anwendungskontext gesetzt werden \cite{deswarte2019}.
+Um die Nachvollziehbarkeit der Ergebnisse und des Evaluierungsprozesses zu gewährleisten sollte eine kontrollierte Umgebung genutzt werden.
+Der Aufbau einer simulierten oder realen Umgebung sollte durch Seeds zur Zufallszahlengenerierung und andere Parameter nachvollzogen werden können.
+Ebenso sollten weitere Evaluationskriterien, wie die Wahl der Hyperparameter, sowie Implementationen der Algorithmen und je nach Verfahren die Netzwerkarchitektur dokumentiert werden.
+\ab 
+Zusätzlich zur tatsächlichen Messverfahren zur Evaluation des Systems sollte die Verhaltensstrategie des Agenten \cite[S. 13 f]{gottesman2018} analysiert werden.
+Insbesondere durch Hinzunahme von Domänenexperten können Abweichungen des gewünschten Verhaltens identifiziert werden.
+Die technische Umsetzung der Nachvollziehbarkeit hilft dem Domänenexperten einen tieferen Einblick in das Verhalten des Agenten zu erlangen und so möglicherweise Randeffekte zu bewerten und Ursachen dafür zu identifizieren.
+Eine solche Analyse ist nicht nur bei der endgültigen Verhaltensstrategie, sondern auch nach jedem Iterationsschritt der Entwicklung sinnvoll, um frühzeitig Optimierungspotenzial oder Fehlverhalten zu identifizieren.

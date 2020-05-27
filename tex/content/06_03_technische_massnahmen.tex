@@ -1,0 +1,37 @@
+\section{Vorgehensplan zur Zusicherung ethischer Werte}\label{sec:massnahmen}
+Die Umsetzung der in \autoref{sec:def_ethischer_werte} definierten ethischen Werte soll entlang eines üblichen Softwarelebenszyklus \cite[S. 64]{broy2013} erfolgen, da die ethischen Probleme in allen Phasen Beachtung finden müssen.
+
+\begin{figure}[ht]
+    \centering
+    \frame{\includegraphics[width=\textwidth]{graphics/guidelines.png}}
+    \caption{Phasen und jeweilige Maßnahmen der Zusicherung ethischer Werte.}
+    \label{fig:guidelines}
+\end{figure}
+
+Die in \autoref{fig:guidelines} skizzierten Maßnahmen werden im Folgenden hinsichtlich der ethischen Werte begründet.
+Das Vorgehen soll kompatibel mit den meisten Vorgehensmodellen sein, indem die Phasen so allgemein gefasst sind, dass sie nahezu in allen Vorgehensmodellen in irgendeiner Form vorkommen.
+Die Phasen können parallel zu den jeweiligen Phasen im Vorgehensmodell durchgeführt werden.
+Viele Maßnahmen behalten ihre Gültigkeit über die jeweilige Phase hinweg, sollten jedoch spätestens ab der vorkommenden Phase beachtet werden.
+Es wird kein spezieller Fokus auf einzelne Domänen gesetzt.
+Stattdessen werden allgemeine Hinweise und Möglichkeiten aufgelistet, wodurch eigene Maßnahmen abgeleitet werden können.
+Viele der Maßnahmen beziehen sich im Speziellen auf sicherheitskritische Anwendungen.
+Innerhalb der Phasen wird zunächst das Ziel der jeweiligen Phase erläutert und anschließend technische und organisatorische Maßnahmen vorgestellt.
+Ziel dieses Vorgehens ist die Definition von Leitlinien, die mit den in \autoref{sec:def_ethischer_werte} vorgestellten Werten kompatibel sind und in bestehende Prozesse integriert werden können.
+\ab 
+Vorweg werden Maßnahmen eingeführt, die phasenübergreifend gültig sind und ggfs. innerhalb der einzelnen Phasen spezieller betrachtet werden.
+So ist Dokumentation in jeder Phase ein wichtiges Mittel, um das Verhalten nachvollziehen zu können, Vertrauen durch Transparenz aufzubauen und Verantwortung zuordnen zu können.
+Welche Informationen dabei in den einzelnen Phasen relevant sind, wird an passender Stelle jeweils beschrieben.
+Alle dokumentierten Informationen sollten langfristig und in einem menschlich lesbaren Format gespeichert werden.
+Optimalerweise wird die Dokumentation ähnlich wie eine Lizenzangabe mit der Software bzw. dem Agenten ausgeliefert.
+In dem Fall muss die Dokumentation möglichst klar und dem Wissensniveau des Anwenders entsprechend formuliert sein.
+Neben einer ausführlichen Dokumentation ist phasenübergreifend eine Miteinbeziehung von Domänenexperten sinnvoll \cite[S. 12 ff.]{gottesman2018}.
+Domänenexperten können schon während des Entstehungsprozesses Einfluss auf die inhaltliche Korrektheit ausüben.
+Um ethisches Handeln zuzusichern, kann zudem z.B. in allen Entwicklungsschritten eine explizite Aufforderung der Übereinstimmung der formulierten Werte und der moralischen Prinzipien der Mitarbeiter gefordert und die Zustimmung oder mögliche Mängel dokumentiert werden.
+Ebenso fordert die Miteinbeziehung von Domänenexperten implizit Erklärbarkeit und Nachvollziehbarkeit ein, indem zum Verständnis der Experten Aktionen des Agenten nichttechnisch aufbereitet werden müssen.
+Domänenexperten können zudem genutzt werden, um die Realitätsnähe simulierter Umgebungen und des Aktionsraumes zu validieren.
+Reinforcement Learning tendiert durch Fehler, wie Reward Hacking dazu, nicht gängige Methoden zur Belohnungsmaximierung zu finden.
+Um dies zu vermeiden können Domänenexperten das Verhalten der Agenten einordnen und so unübliche frühzeitig Methoden identifizieren.
+\input{content/06_03_01_vorbereitungsphase}
+\input{content/06_03_02_umseztungsphase}
+\input{content/06_03_03_testphase}
+\input{content/06_03_04_wartung}

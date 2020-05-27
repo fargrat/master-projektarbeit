@@ -1,0 +1,23 @@
+\section{Begriffe und Eigenschaften von Reinforcement Learning Verfahren}\label{sec:eigenschaften_rl}
+Dadurch, dass Reinforcement Learning nicht einen einzelnen Algorithmus beschreibt, sondern ein Paradigma bestehend aus einer Vielzahl von Algorithmen, ist es im Hinblick auf das Ziel dieser Arbeit sinnvoll, die unterscheidenden Merkmale der Verfahren zu betrachten.
+Die Begriffe werden als Entscheidungskriterien in \autoref{sec:massnahmen} hinzugezogen, sodass insbesondere im Hinblick auf die Kompabilität mit den in \autoref{sec:def_ethischer_werte} definierten Werten die Wahl eines geeigneten Verfahrens vereinfacht werden kann.
+\subsection{Belohnung und Wertfunktion}
+Als Reaktion der Umwelt auf eine Aktion des Agenten wird durch eine stochatische Funktion \cite[S. 6]{sutton2018} eine Belohnung zurückgeliefert.
+Die Belohnung ist die Grundlage für eine meist unverzügliche Anpassung der Verhaltensstrategie und dient als Indikator über die Güte der ausgeführten Aktion für den jeweiligen Zustand.
+Um nachhaltig sinnvolle Entscheidungen zu treffen existiert zusätzlich die Wertfunktion (engl. value function), welche den langfristigen Nutzen von Zuständen approximiert.
+So kann beispielsweise ein Zustand einzeln betrachtet stets in einer geringen Belohnung resultieren, langfristig jedoch von gut belohnten Zuständen gefolgt sein.
+Die Wertfunktion ordnet diesem Zustand einen hohen Wert zu, die Belohnungsfunktion hingegen einen niedrigen Belohnungswert.
+
+\subsection{Model-freie und Model-basierte Verfahren}
+Im Kontext der model-freien und der model-basierten Verfahren bezeichnet das Model die Kenntnis einer Abbildung der Umwelt und dessen Verhalten \cite[S. 7]{sutton2018}.
+Das Model der Umwelt wird abgebildet durch eine Zustandsübergangsfunktion \cite[S. 14]{li2018}.
+Wird ein model-basiertes Verfahren genutzt, so existiert ein solches Model über die Umwelt und kann genutzt werden, um Vorhersagen über die Auswirkungen von Aktionen zu treffen.
+Existiert kein Model muss ein model-freies Verfahren benutzt werden.
+Mit Hilfe des Versuchs- und Irrtumsprinzip \cite[S. 7]{sutton2018} versucht der Agent dann, je nach Verfahren ein eigenes Model der Umwelt zu erzeugen.
+
+\subsection{On-Policy und Off-Policy}
+On-Policy und Off-Policy beschreiben Lernverfahren, die sich insbesondere durch das Vorgehen bezüglich der Verwendung und Anpassung der Verhaltensstrategie bzw. im Fall des Off-Policy Lernens der Zielstrategie unterscheiden.
+Beim Off-Policy Lernen \cite[S. 14]{li2018} wird eine meist statische Vorgehensstrategie (engl. behavior policy) benutzt, welche das Verhalten des Agenten steuert. 
+Zusätzlich gibt es eine Zielstrategie (engl. target policy), welche eine möglichst optimale Wertfunktion lernt.
+Die Zielstrategie wird basierend auf den erhaltenen Belohnungen für die ausgeführten Aktionen angepasst.
+On-Policy-Lernen benutzt nur eine einzelne Verhaltensstrategie, welche ähnlich wie die Zielstrategie des Off-Policy-Lernens angepasst wird, jedoch auch zur Steuerung des Verhaltens des Agenten benutzt wird.

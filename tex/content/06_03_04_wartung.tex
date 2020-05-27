@@ -1,0 +1,24 @@
+\subsection{Wartungsphase}\label{sub:wartungsphase}
+Grundlage dieser Phase ist das fertige System, welches im realen Anwendungsfall eingesetzt wird.
+Zur Wartung im Speziellen von Reinforcement-Learning-Systemen sind in Folge der intensiven Literaturrecherche im Rahmen dieser Arbeit nahezu keine Informationen entsprungen.
+Deshalb werden im Folgenden allgemeine Maßnahmen zur Wartung von Software-Systemen beschrieben und auf Grundlage meiner persönlichen Meinung auf die Thematik des maschinellen Lernens bzw. des Reinforcement Learning bezogen.
+Die Wartungsphase bietet das Potenzial, langfristig Vertrauen aufzubauen und nachhaltig zu stärken.
+In dieser Phase behalten insbesondere die Umsetzungsphase in \autoref{sub:umsetzungsphase} und die Testphase in \autoref{sub:testphase} ihre Relevanz.
+Insbesondere die Testphase sollte bei der Umsetzung von Fehlerverbesserungen beachtet werden, um neue Fehler zu vermeiden.
+Die hier beschriebenen Maßnahmen sollten stets mit dem Ziel ausgeführt werden, dass in den Phasen bis zum Endprodukt aufgebaute Vertrauen zu stärken und im Fall der Weiterentwicklung und Einführung neuer Funktionen das Vertrauen in die Neuerungen herzustellen.
+Als Dokumentation ist in der Wartungsphase insbesondere ein Änderungsprotokoll (engl. changelog) sinnvoll, um dem Anwender nachvollziehbar Nachweise über Änderungen und deren Inhalt zu geben.
+Ziel ist die Wahrung bzw. die Zusicherung eines möglichst nachhaltig zuverlässigen Zustand des Systems.
+\ab 
+Fehler können auch durch ausgiebiges Testen nicht gänzlich ausgeschlossen werden \cite[S. 533]{balzert2011}.
+Insbesondere bei Systemen mit hoher Kritikalitätsbewertung ist eine Wartung im Sinne der Fehlerausbesserung bis zur endgültigen Außerbetriebnahme sinnvoll.
+Ist dies nicht der Fall, so sollte der Anwender klar über die Dauer des Wartungszeitraumes und über ein Ablaufen dieses Zeitraumes frühzeitig informiert werden.
+Die Wartung des Systems sollte dessen Funktionalität nicht verändern, sondern Zuverlässigkeit und Korrektheit zusichern.
+Grundlage der Fehlerausbesserung ist die Fehleridentifikation, welche durch die Logdatenanalyse, eine aktive Fehlersuche durch Entwickler aus Softwaresicht, von Domänenexperten durch Verhaltensanalyse oder durch Rückmeldung der Anwender erfolgen kann.
+Die Kommunikation mit den Anwendern ist insbesondere deshalb sinnvoll, weil die Vielzahl der Anwendungskontexte und Aufgabengebiete Situationen hervorruft, die in der Entwicklung- und Testphase nicht abgedeckt werden können.
+Neben den typischen Softwarefehlern bietet Reinforcement Learning Potenzial zusätzlicher Fehlerquellen, die in \cite[S. 3]{amodei2016} beschrieben werden.
+Dazu gehört das unerwünschte Verhalten, bei dem sich durch die stetige Veränderung des System das Verhalten so ändert, dass es nicht mehr den vorher definierten Anforderungen entspricht.
+Eine weitere Fehlerform ist die unnatürliche Belohnungsmaximierung (engl. reward hacking).
+Reinforcement-Learning-Agenten können unnatürliches Verhalten entwickeln, welches zwar Aktionen wählt, die die Belohnung maximieren, jedoch nicht gängigen Methoden entspricht und damit potenziell gefährlich sein kann.
+\ab
+Werden Fehler identifiziert gilt es, diese gemäß der Kritikalität einzuordnen und dementsprechend zu handeln.
+Insbesondere bei Fehlern in Anwendungen mit hoher Kritikalität sollten Anwender und Betroffene informiert und das System ggfs. bis zur Nachbesserung stillgelegt werden.

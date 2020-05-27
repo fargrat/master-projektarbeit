@@ -1,0 +1,67 @@
+\section{Anwendungsgebiete und Stand der Technik}\label{sec:stand_der_technik}
+Im Folgenden wird der Stand der Technik in zweierlei Hinsicht betrachtet.
+So wird zunächst ein Überblick über Möglichkeiten und Anwendungsgebiete des Reinforcement Learning aufgezeigt und anschließend Ansätze der Umsetzung von Ethik in Reinforcement-Learning-Anwendungen betrachtet und mit der Konzeption des Entwicklungsprozess ethischer Agenten im Rahmen dieser Arbeit verglichen.
+Dadurch wird die Relevanz der Thematik, sowie Unterschiede zu bestehenden Arbeiten aufgezeigt.
+
+\subsection{Anwendungsgebiete}
+Reinforcement Learning wird speziell in Anwendungsbereichen eingesetzt, in denen der Agent autonom in fremden Situationen agieren muss.
+Im Folgenden werden als Anwendungsbereiche exemplarisch autonomes Fahren, autonome Waffensysteme und Einsatzgebiete im Gesundheitswesen betrachtet.
+Innerhalb dieser Anwendungsgebiete wird Reinforcement Learning zum einen als Aktor in Form von Robotik eingesetzt, aber auch als unterstütztende Expertensysteme.
+
+\subsubsection{Autonomes Fahren}
+Fahrzeuge mit Fahrassistenzsystemen oder Teilautonomie sind schon jetzt ein relevantes Thema innerhalb der Automobilindustrie bei Unternehmen, wie beispielsweise Daimler, Google, Volkswagen oder Tesla, mit einem Gesamtmarktwert von über fünf Milliarden US-Dollar im Jahr 2018 \cite{businesswire2019}.
+Bestehende Arbeiten, wie \cite{arvind2019} oder \cite{niu2009} beschreiben die Implementierung von Teilkomponenten des autonomen Fahrens in virtuellen Umgebungen, indem Aufgaben, wie die Kollisionsvermeidung gesondert betrachtet werden.
+\cite{you2019} betrachtet als Teilproblem die intelligente Verkehrssteuerung, in dem das Verhalten autonomer Fahrzeuge im Bezug auf Verkehrsfluss und Verbrauchseffizienz optimiert wird.
+\cite{yu} beschreibt einen Einsatz des autonomen Fahrens, indem durch Deep-Q-Learning die Steuerung eines virtuellen Fahrzeuges erlernt und der Einfluss unterschiedlicher Belohnungsfunktionen auf den Fahrstil beobachtet wird.
+In \cite{sallab2017} wird als Grundlage für die Entwicklung ein Frameworks für autonomes Fahrens vorgestellt, welches durch Kombination von Deep Reinforcement Learning und Rekurrenten Neuronalen Netzen (engl. recurrent neural network) grundlegende Funktionen, wie Steuerung, Abbildung von Umgebungen und die Interaktion mit anderen Fahrzeugen implementiert.
+Das Training autonomer Fahrzeuge ist durch die Natur der Fahrzeuge nur unter großem Kostenaufwand und mit beträchtlichem Risiko durchzuführen.
+So wird in \cite{pan2017} eine Möglichkeit vorgestellt, um simulierte Umgebungen mit Hilfe von realen Bildern abzubilden, wodurch die realitätsnähe simulierter Agenten verbessert werden soll.
+
+\subsubsection{Autonome Waffensysteme}
+Reinforcement Learning in autonomen Waffensystemen wird insbesondere bei der Entwicklung und dem Einsatz unbemannter Luftfahrzeuge (engl. unmanned aerial vehicles, kurz UAV) in Form von Quadrocoptern verwendet, da diese durch ihre Bauform und die daraus resultierende Flugstabilität diverse Vorteile gegenüber anderen Bauformen bieten \cite{bou-ammar2010}.
+Ähnlich wie bei Anwendungen des autonomen Fahrens werden auch bei autonomen Waffensystemen Teilprobleme betrachtet.
+So beschreibt \cite{bou-ammar2010} in \cite{bou-ammar2010} die Nutzung verschiedener Reinforcement-Learning-Verfahren für die Steuerung von UAVs.
+Zusätzlich zur tatsächlichen Steuerung werden z.B. in \cite{zhang2015} Möglichkeiten zur Identifikation einer möglichst optimalen Route für mehrere UAVs unter Betrachtung der Routenlänge und der Risikobewertung durch andere Agenten aufgezeigt. 
+\cite{koch2019} beschreibt den Einsatz von Reinforcement Learning für die Höhensteuerung im Hinblick auf Stabilität und Kontrollmöglichkeiten als weitere Teilkomponente für die Steuerung von UAVs.
+Neben der eigentlichen Fortbewegung von autonomen Waffensystemen findet Reinforcement Learning auch Einsatz in Abwehrsystemen.
+So wird in \cite{xiao2018} beschrieben, wie die Verbindungsqualität von UAVs durch Reinforcement Learning gegen Störsignale gesichert werden kann, indem die Kommunikation und mögliche Angriffe im vorhinein simuliert und das Verhalten dementsprechend angepasst wird.
+
+\subsubsection{Gesundheitswesen}
+Im Gesundheitswesen ist der Einsatz autonomer Systeme wünschenswert, um medizinisches Personal zu entlasten, die Fehlerquote zu reduzieren und die begrenzte Menge an spezialisierten Experten zu skalieren.
+Neben dem Einsatz von Robotik im Gesundheitswesen ist die Anwendung von Expertensystemen sinnvoll, um die Gefährdung von Patienten zu limitieren.
+Durch Nutzung von Expertensystemen muss die Durchführung der vorgeschlagenen Entscheidungen von Menschen getroffen werden, wodurch Entscheidungen frühzeitig hinterfragt werden können.
+So wird beispielsweise in \cite{liu2017} und in \cite{mulcahylevy2018} Reinforcement Learning genutzt, um einen möglichst optimalen Behandlungsplan zu entwickeln und an mögliche Änderungen während der Behandlung anzupassen.
+In \cite{richter2019} wird eine simulierte Operationsumgebung vorgestellt, welche gemäß bestehender Standards implementiert ist und mit entsprechender Schnittstelle genutzt werden kann.
+Ziel ist dabei, die Entwicklung weiterer Umgebungen zu motivieren und so die Vergleichbarkeit neuer Algorithmen zu gewährleisten.
+Zur Optimierung von Robotern im Gesundheitswesen wird in \cite{woodworth} eine Möglichkeit zur Anpassung des Verhaltens gemäß der Vorgaben der Nutzen durch Inverse Reinforcement Learning vorgeschlagen.
+So können Roboter durch Beobachtung des Nutzers generalisieren und entsprechend der Erwartungen handeln.
+
+\subsection{Verwandte Arbeiten}
+Im Folgenden sollen Arbeiten aufgezeigt werden, die inhaltlich ebenfalls die Betrachtung ethischer Bedenken bei der Umsetzung von KI-Anwendungen, im Speziellen von Reinforcement-Learning-Anwendungen behandeln.
+Dadurch kann für die spätere Konzeption eine Grundlage der Entwicklung geschaffen werden und Alleinstellungsmerkmale dieser Arbeit herausgestellt werden.
+\ab 
+Inhaltlich verwandt sind zunächst die in \autoref{chap:standards} vorgestellten Beispiele zur Zusicherung ethischer Richtlinien.
+Darin werden beispielsweise in \cite{smuha} Grundlagen der Technologie eingeführt und Vorstellungen bezüglich Ethik-Richtlinien von der Europäischen Union oder in \cite{chatila2019} von der IEEE aufgezeigt.
+Dabei sind alle Maßnahmen bezogen auf künstliche Intelligenz als Oberthema.
+Im Vergleich zu dieser Arbeit wird der Fokus nicht speziell auf Reinforcement Learning, sondern höchstens auf potenzielle Anwendungen gelegt.
+Weiterhin werden nicht explizit technische Maßnahmen vorgeschlagen, sondern eher Richtlinien, die bei Umsetzung individuell erarbeitet werden müssen.
+\ab 
+In \cite{cointe} wird moralisches Handeln in Multiagenten-Systemen betrachtet.
+Dabei wird in \cite{cointe} ein Model entwickelt, welches das eigene und das Verhalten der anderen Agenten in der Umgebung ethisch bewertet.
+Ähnlich zum Vorgehen im Rahmen dieser Arbeit basiert die ethische Bewertung auf Grundlage moralphilosophischer Konzepte.
+Unterschiedlich ist allerdings die Vorgehensweise.
+So werden in \cite{cointe} die Normen und moralischen Prinzipien technisch abgebildet, um das Handeln gemäß der eigenen Einschätzung zu beschränken.
+Die Normen müssen zunächst definiert und bei der Anwendung regelbasiert abgefragt werden.
+Daraus ergeben sich zwei Probleme.
+Zum einen müssen die Normen formalisiert werden, was insbesondere bei komplexen Situationen nicht trivial bzw. nicht realistisch umsetzbar ist.
+Zum anderen wird das moralische Handeln nicht als Teil des Lernens miteinbezogen, wodurch der Agent kein eigenes Rechtsbewusstsein erhält.
+Anders als bei dieser Arbeit werden zudem Multiagenten-Umgebungen betrachtet und ein regelbasiertes Vorgehen vorgeschlagen.
+So wird im Rahmen dieser Arbeit ein allgemeines organisatorisches und technisches Vorgehen und nicht eine einzelne Maßnahme beschrieben.
+\ab 
+In \cite{noothigattu} wird ein Agent erstellt, der mit Hilfe von Inverse Reinforcement Learning ethischen Normen folgen soll.
+Im Gegensatz zu \citeauthor{cointe} werden die Normen nicht regelbasiert vor der Entscheidungsfindung abgefragt, sondern durch Beobachtung von Experten gelernt.
+Neben einer Verhaltensstrategie zur Belohnungsmaximierung existiert dann eine zweite Verhaltensstrategie, die gemäß des beobachten Verhaltens moralisch handelt.
+Je nach Situation wird dann nachvollziehbar entschieden, welche Aktion und damit welche Verhaltensstrategie sinnvoller ist.
+Dieser Ansatz in \cite{noothigattu} lässt, ähnlich wie in \cite{cointe}, jegliche organisatorische Maßnahmen außen vor.
+Ebenso kann das Verfahren durch die Wahl der jeweiligen Verfahrensstrategie lediglich entscheiden, ob effizient oder ethisch gehandelt wird.
+Im Rahmen dieser Arbeit ist das Ziel, den Agent möglichst zu jedem Zeitpunkt moralisch handeln zu lassen und organisatorische und technische Maßnahmen zu vereinen.

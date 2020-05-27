@@ -1,0 +1,89 @@
+\input{header.tex}
+
+%------------------------------------------------------------------------------
+%-------------------------    Angaben zur Arbeit   ----------------------------
+%------------------------------------------------------------------------------
+
+%Titel der Arbeit
+%\newcommand{\thetitle}{Multivariate Selektion atmosphärischer Myon-Neutrinos im Energiebereich $4 - \SI{190}{\giga\electronvolt}$ mit IceCube DeepCore}
+\newcommand{\thetitle}{Betrachtung technischer Maßnahmen zur Umsetzung ethischer Sicherheitsaspekte bei der Erstellung und Anwendung von Reinforcement-Learning-Modellen}
+\newcommand{\Jahr}{2020}
+\newcommand{\Geburtsort}{Paderborn}
+\newcommand{\Lehrstuhl}{Experimentelle Physik V}
+\newcommand{\Betreuer}{Prof. Dr. Sebastian Bab}
+\newcommand{\Zweitgutachter}{Prof. Dr. Burkhard Lenze }
+\newcommand{\Abgabedatum}{\today}
+
+
+%Author und Email-Adresse
+\author{
+    Niels Schlunder\\
+    geboren in \Geburtsort
+}
+
+\titlehead{
+    \includegraphics[height=2cm]{logos/FH_Dortmund-logo.pdf}
+}
+\title{\thetitle}
+\date{\Jahr}
+
+%\subject{Arbeit zur Erlangung des akademischen Grades\\ Master of Science}
+\publishers{Praktische Informatik \\ Fachbereich Informatik \\ Fachhochschule Dortmund}
+
+
+
+\begin{document}
+\frontmatter
+\maketitle
+%Gutachterseite
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{tabbing}
+2. Gutachter : \=\kill
+1. Gutachter : \> \Betreuer \\[11pt]
+2. Gutachter : \> \Zweitgutachter \\[11pt]
+\end{tabbing}
+\vspace{11pt}
+Abgabedatum: \Abgabedatum
+\newpage
+
+\renewcommand{\baselinestretch}{1.5}\normalsize
+% hier beginnt der Vorspann, nummeriert in römischen Zahlen
+\input{content/00_abstract.tex}
+\tableofcontents
+
+\mainmatter
+% Hier beginnt der Inhalt mit Seite 1 in arabischen Ziffern
+% Introduction
+% Theory: Astro physics, cosmic rays: interactions in the atmosphere, Flux models; IceCube: DeepCore, Measurement, Reconstruction, Weighting
+% Analysis: data preparation: weighting, remove garbage; feature generation; feature selection; separation; validation; evaluation
+% Conclusion and outlook
+\input{content/01_einleitung.tex}
+\input{content/03_grundlagen_rl.tex}
+\input{content/02_grundlagen_ethik.tex}
+\input{content/04_standards_normen.tex}
+\input{content/05_diskussion.tex}
+\input{content/06_konzeption.tex}
+\input{content/07_evaluation.tex}
+\input{content/08_zusammenfassung.tex}
+\input{content/09_ausblick.tex}
+
+\renewcommand{\baselinestretch}{1}
+\appendix
+% Hier beginnt der Anhang, nummeriert in lateinischen Buchstaben
+%\input{content/a_appendix.tex}
+
+\backmatter
+
+\listoffigures
+% \listoftables
+
+%\addcontentsline{toc}{chapter}{Danksagung}
+%\input{content/danksagung.tex}
+
+\printbibliography
+
+\cleardoublepage
+\input{content/eid_versicherung.tex}
+
+\end{document}

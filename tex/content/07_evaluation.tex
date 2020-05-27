@@ -1,0 +1,56 @@
+\chapter{Evaluation}\label{chap:evaluation}
+Im Folgenden erfolgt eine Evaluation der Ergebnisse dieser Arbeit hinsichtlich der in \autoref{chap:einleitung} gestellten Fragestellungen und der in \autoref{sec:Herausforderungen} definierten Herausforderungen für die Konzeption.
+Zur Gewährleistung der Übersichtlichkeit werden die jeweiligen Bewertungsgrundlagen angegeben, inhaltlich passend zusammengefasst und anschließend diskutiert, inwiefern diese erfüllt werden.
+
+\section{Formalisierung ethischer Werte}
+Die Formulierung ethischer Werte ist die Grundlage des moralischen Handelns von Reinforcement-Learning-Agenten und der eigentlichen Konzeption organisatorischer und technischer Maßnahmen zur Zusicherung eben dieser.
+Die Forderung nach der Formalisierung ethischer Werte besteht dabei aus zwei Problemen.
+So sind ethische Werte abhängig vom sozialen Umfeld und persönlichen Erfahrungen und sind damit subjektiv.
+Zum anderen werden moralische Entscheidungen in der Regel intuitiv bzw. im Fall moralischer Dilemma hoch komplex und damit schwer formalisierbar getroffen.
+\ab 
+Um diese Probleme zu lösen wurde deshalb zur Schaffung des inhaltlichen Bezuges zunächst Grundlagen der angewandten Ethik und Moral vermittelt und die Frage danach, ob moralisches Handeln von Agenten überhaupt möglich ist betrachtet.
+Zusätzlich wurden Vorschläge und Begründungen bezüglich der Zusicherung ethischer Werte in KI-Anwendungen unterschiedlicher politischer Institutionen und Regionen vorgestellt.
+Auf Grundlage des Verständnisses der angewandten Ethik, sowie der Betrachtung bereits bestehender Werte wurden die Eigenschaften Nachvollziehbarkeit und Erklärbarkeit, Vertrauen durch funktionale Korrektheit und Robustheit, sowie Verantwortung und Schuld definiert und jeweils einzeln begründet und inhaltlich eingeordnet.
+Diese ethischen Werte können natürlich nicht die Gesamtheit aller ethischen Probleme abdecken.
+Ziel ist viel mehr die Schaffung von Transparenz, der Zusicherung von Vertrauen und die Sicherung und Wahrung der Menschenwürde als höchstes Gut.
+Ebenso decken die Werte nicht nur das Handeln des Agenten während der Nutzung ab, sondern bieten eine Grundlage für die vorhergehende Zusicherung von Adaption und für das Vorgehen im Fehlerfall, insbesondere im Bezug auf mögliche Folgen.
+So sollen die Werte möglichst unabhängig vom Nutzungskontext der Anwendung und den Werten einzelner Beteiligter während des Softwareentwicklungsablaufs sein.
+
+\section{Maßnahmen zur Umsetzung der ethischen Werte von Reinforcement-Learning-Agenten}
+Grundlage der Erstellung von Maßnahmen zur Umsetzung der ethischen Werte im Sinne eines moralisch handelnden Agenten wurde zunächst auf Basis der Ausarbeitung von \cite{bendel2019} begründet, dass Reinforcement-Learning-Agenten potenziell die Fähigkeit des moralischen Handelns besitzen können.
+In \autoref{sec:massnahmen} wurde dann ein strukturierter Vorgehensplan entwickelt, in dem technische und organisatorische Maßnahmen entlang eines allgemein üblichen Softwareentwicklungsablaufs nach \cite{broy2013} vorgestellt wurden.
+Daraus haben sich die vier Phasen Vorbereitung, technische Konzeption und Umsetzung, Testen und Wartung ergeben.
+Unabhängig von den jeweiligen Phasen wurden allgemeingültige Maßnahmen, wie eine nachvollziehbare Dokumentation und die Relevanz der Miteinbeziehung von Domänenexperten herausgestellt.
+Die Relevanz der Maßnahmen wird an jeweiliger Stelle explizit auf Reinforcement-Learning-Anwendungen, sowie die in \autoref{sec:def_ethischer_werte} definierten ethischen Werte bezogen.
+In der Vorbereitungsphase werden so Möglichkeiten zur Sensibilisierung der Beteiligten, einer klaren Definition des Einsatzzweckes, der Absichten und Anforderungen, wie Einsatz und Relevanz einer anwendungsabhängigen Kritikalitätsbewertung eingeführt.
+Durch eine präzise Dokumentation und Definition des Nutzungs- und Entwicklungskontextes können so Verantwortlichkeiten identifziert werden.
+Anschließend wurden in der technischen Konzeptions- und Umsetzungsphase insbesondere technische Maßnahmen betrachtet.
+Dazu gehört neben der Wahl der geeigneten Technologie hinsichtlich ethischer Anforderungen, eine nachvollziehbare Datenverarbeitung, explizite Maßnahmen zur Zusicherung von Nachvollziehbarkeit, sowie Möglichkeiten zur sicherenden Erkundung von Agenten in fremden Umgebungen.
+In der Testphase wurden dann Maßnahmen aufgezeigt, mit denen die Korrektheit des Agenten nachvollziehbar geprüft werden kann.
+Ebenso wurde der Evaluationsprozess betrachtet, um aussagekräftige und nachvollziehbare Metriken zu produzieren, die den sachlichen Vergleich mit anderen Systemen erlauben.
+Abschließend wurden in der Wartungsphase Maßnahmen betrachtet, mit denen das System nachhaltig gepflegt werden kann, um Vertrauen langfristig zuzusichern, Fehler zu identifizieren und transparent zu dokumentieren, sowie Verantwortung durch Kommunikation innerhalb des Wartungszeitraumes abzugrenzen.
+\ab 
+Die Maßnahmen und das Vorgehen sind dabei explizit so gewählt, dass sie möglichst kompatibel mit den jeweiligen Technologien und Verfahrensmodellen sind.
+In Folge dessen ist der Erfolg der Umsetzung der ethischen Werte abhängig von der Strenge der Durchführung.
+So müssen im Projektablauf die Maßnahmen aktiv integriert und die Umsetzung regelmäßig kontrolliert werden.
+Dadurch ist jeder Beteiligte gefragt das persönliche und kollektiv Handeln bezüglich der Anforderungen zu hinterfragen.
+Der daraus resultierende Agent handelt, insbesondere wegen der Problematik der Formalisierbarkeit moralischen Handelns und daraus resultierender technischer Limitierungen der Abbildung eben dieser, nicht menschenähnlich, sondern gemäß eines allgemeinen ethischen Rahmens, mit dem Ziel der Wahrung von Unversehrtheit von Würde und Wohl des Menschen und dem Aufbau von Vertrauen durch Nachvollziehbarkeit, Korrektheit und der Identifikation von Verantwortung.
+
+\section{Adaption und Akzeptanz}
+Damit Reinforcement Learning als Technologie und die daraus resultierenden Anwendungen Adaption innerhalb der breiten Masse finden, müssen gewissen Hürden überwunden werden.
+Im Rahmen der Arbeit wurde deshalb zunächst in \autoref{sec:Herausforderungen} der Prozess der Adaption auf persönlicher Ebene und die daraus entstehenden Hürden identifiziert.
+In der Definition der ethischen Werte in \autoref{sec:def_ethischer_werte} wird die Adaption implizit beachtet.
+So dient die Zusicherung der ethischen Werte dazu, die Technologien transparent zu gestalten und so Vertrauen aufzubauen.
+Ebenso hilft die klare Definition innerhalb des Vorgehensplan in \autoref{sec:massnahmen} dabei, den Nutzungskontext klar abzugrenzen und realistische Erwartungen des Anwenders herzustellen.
+Nicht betrachtet werden im Rahmen dieser Arbeit Möglichkeiten zur Reduzierung der Komplexität der eigentlichen Anwendungen oder der Etablierung eines Mindestkenntnisstandes, um Folgen der digitalen Kluft entgegenzuwirken.
+Die Etablierung der Technologie im Sinne der Adaption durch Akzeptanz erfolgt eher, indem Innovatoren \cite[S. 519]{karnowski2013} und frühe Übernehmer Vertrauen gewinnen und dadurch die frühe und späte Mehrheit beeinflusst wird.
+
+
+\section{Schaffung von Vertrauen trotz mangelnder Zertifizierung}
+Im Rahmen der Arbeit ist die Problematik der mangelnden Zertifizierung deutlich geworden.
+Auch wenn es die Möglichkeit zur Zertifizierung von Softwareentwicklungsprozessen gibt, so gibt es zum Zeitpunkt der Recherche keine Möglichkeit die Korrektheit von Reinforcement-Learning-Anwendungen im Speziellen von vertrauenswürdigen Institutionen nachzuweisen.
+Dadurch, dass Vertrauen eine der geforderten ethischen Werte im Zusammenhang mit Korrektheit ist, werden im Vorgehensplan explizit Maßnahmen zur Schaffung dessen betrachtet.
+Um trotz mangelnder Zertifizierungen Vertrauen zu gewinnen wird deshalb eine offene Dokumentation, insbesondere im Wartungszeitraum, gefordert.
+Neben einer transparenten Prozess- und Anwendungsdokumentation sind die Kernmaßnahmen in \autoref{sub:testphase} in Form der Testphase definiert.
+So kann durch Verifikation die Korrektheit des Agenten gemäß der Anforderungen nachgewiesen werden und mit Hilfe nachvollziehbarer Metriken die Güte der Anwendung nachgewiesen werden.
+Ebenso resultiert die Miteinbeziehung von Domänenexperten in den gesamten Entwicklungszeitraum in einem Entgegenwirken gegen eine mögliche Wissenslücke zwischen Entwicklern und der Domäne.
